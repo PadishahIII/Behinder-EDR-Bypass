@@ -1,6 +1,8 @@
 # Overview
 场景：可RCE或文件上传，但有终端防护写不上webshell
+
 方法：把冰蝎服务端代码放到nashorn脚本里，让落地的jsp尽量不包含特征，然后用mitmproxy脚本实现无缝衔接原版冰蝎
+
 前提：jdk≥8 <15，用behinder4.1测试成功
 
 # Usage

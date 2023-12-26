@@ -5,13 +5,19 @@
 
 前提：jdk≥8 <15，用behinder4.1测试成功
 
+# Prerequisite
+It needs [mitmproxy](https://mitmproxy.org/) to run the proxy script and [pycryptodome](https://www.pycryptodome.org/) library. You can install the required packages by:
+```
+pip install -r requirements.txt
+```
+
 # Usage
 1. 首先用RCE或文件上传漏洞把jsp写到web能访问到的地方，有两个版本可选：
-- behinder-server-base64.jsp: 对nashorn代码仅base64编码，可能被WAF拦，但落地不容易被杀（首选）
-- behinder-server-aes.jsp: 对nashorn代码进行AES加密，密钥硬编码，落地容易被杀，相对的，绕WAF很管用
+- [behinder-server-base64.jsp](https://github.com/PadishahIII/Behinder-EDR-Bypass/blob/master/behinder-server-base64.jsp): 对nashorn代码仅base64编码，可能被WAF拦，但落地不容易被杀（首选）
+- [behinder-server-aes.jsp](https://github.com/PadishahIII/Behinder-EDR-Bypass/blob/master/behinder-server-aes.jsp): 对nashorn代码进行AES加密，密钥硬编码，落地容易被杀，相对的，绕WAF很管用
 2. 本地开启mitmproxy代理，同样是两个版本，需要与jsp的版本对应：
-- mitmBehinder-base64.py（首选）
-- mitmBehinder-aes.py
+- [mitmBehinder-base64.py](https://github.com/PadishahIII/Behinder-EDR-Bypass/blob/master/mitmBehinder-base64.py)（首选）
+- [mitmBehinder-aes.py](https://github.com/PadishahIII/Behinder-EDR-Bypass/blob/master/mitmBehinder-aes.py)
 在本地8085端口开启mitmproxy代理：
 ```
 mitmproxy -s mitmBehinder1.py --listen-host 0.0.0.0 -p 8085 -k

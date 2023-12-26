@@ -1,3 +1,5 @@
+<h1>用ScriptEngine绕过EDR落地检测上线冰蝎</h1>
+
 # Overview
 场景：可RCE或文件上传，但有终端防护写不上webshell
 

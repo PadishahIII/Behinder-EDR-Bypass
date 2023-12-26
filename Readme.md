@@ -6,7 +6,7 @@
 前提：jdk≥8 <15，用behinder4.1测试成功
 
 # Prerequisite
-It needs [mitmproxy](https://mitmproxy.org/) to run the proxy script and [pycryptodome](https://www.pycryptodome.org/) library. You can install the required packages by:
+本项目需要使用[mitmproxy](https://mitmproxy.org/)项目搭建代理，下载依赖：
 ```
 pip install -r requirements.txt
 ```
@@ -18,6 +18,7 @@ pip install -r requirements.txt
 2. 本地开启mitmproxy代理，同样是两个版本，需要与jsp的版本对应：
 - [mitmBehinder-base64.py](https://github.com/PadishahIII/Behinder-EDR-Bypass/blob/master/mitmBehinder-base64.py)（首选）
 - [mitmBehinder-aes.py](https://github.com/PadishahIII/Behinder-EDR-Bypass/blob/master/mitmBehinder-aes.py)
+
 在本地8085端口开启mitmproxy代理：
 ```
 mitmproxy -s mitmBehinder1.py --listen-host 0.0.0.0 -p 8085 -k

@@ -29,10 +29,10 @@ pip install -r requirements.txt
 
 在本地8085端口开启mitmproxy代理：
 ```
-mitmproxy -s mitmBehinder1.py --listen-host 0.0.0.0 -p 8085 -k
+mitmproxy -s mitmBehinder-base64.py --listen-host 0.0.0.0 -p 8085 -k
 ```
 在本地8085端口开启mitmproxy代理，转发到8080端口：
 ```
-mitmproxy -s mitmBehinder1.py --listen-host 0.0.0.0 -p 8085 --mode upstream:http://127.0.0.1:8080 -k
+mitmproxy -s mitmBehinder-base64.py --listen-host 0.0.0.0 -p 8085 --mode upstream:http://127.0.0.1:8080 -k
 ```
 3. 冰蝎客户端设置mitmproxy的代理，连接即可，默认密码rebeyond，可在mitmproxy脚本中修改服务端密码
